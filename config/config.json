@@ -1,0 +1,6 @@
+{
+    "host": "mysqlserve.cwklprzy9bmr.us-east-1.rds.amazonaws.com",
+    "user": "admin",
+    "database": "db_forno",
+    "password": "Est$9361"
+}
