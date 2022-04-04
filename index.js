@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 
 const Routes = require('./routes/routes');
 const rearme = require('./routes/rearme');
-//const freqmanual = require('./routes/freqmanual')
 const cors = require('cors');
 
 const errorController = require('./controllers/error');
@@ -22,9 +21,7 @@ app.use((req, res, next) => {
 
 app.use('/api', Routes);
 
-app.use('/rearme', rearme);// update rearme
-
-//app.use('/freqmanual', freqmanual); // update freq velocidade
+app.use('/rearme', rearme);
 
 const ports = process.env.PORT || 3000;
 
