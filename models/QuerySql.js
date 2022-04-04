@@ -18,6 +18,9 @@ module.exports = class motor{
     static SelectMotor(){
       return db.execute('SELECT * FROM tb_motor');
     }
+    static SelectMotorFreq(){
+      return db.execute('SELECT * FROM tb_motor');
+    }
     static SelectRetornoLigado(){
       return db.execute('SELECT retLigado FROM tb_motor');
     }
