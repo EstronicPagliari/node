@@ -23,4 +23,3 @@ exports.UpdateFrequencia = async (req, res, next) => {
       next(err);
     }
   };
-  
