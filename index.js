@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const Routes = require('./routes/routes');
 const rearme = require('./routes/rearme');
 const freq = require('./routes/freqmanual')
+const receita = require('./routes/receita');
 const cors = require('cors');
 
 const errorController = require('./controllers/error');
@@ -27,6 +28,8 @@ app.use('/api', Routes);
 app.use('/rearme', rearme);
 
 app.use('/freq', freq);
+
+app.use('/receita', receita);
 
 const ports = process.env.PORT || 3000;
 
