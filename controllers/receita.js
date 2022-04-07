@@ -11,11 +11,10 @@ exports.SelectReceita = async (req, res, next) => {
       next(err);
     }
   };
-
-  exports.SelectMotorFreq = async (req, res, next) => {
+  exports.deletereceita = async (req, res, next) => {
     try {
-      const [Motor] = await motor.SelectMotorFreq();
-      res.status(200).json(Motor);
+      const deleteResponse = await receita.deletereceita(req.params.id);
+      res.status(200).json(deleteResponse);
     } catch (err) {
       if (!err.statusCode) {
         err.statusCode = 500;

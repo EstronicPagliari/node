@@ -26,5 +26,8 @@ module.exports = class receita{
     static SelectReceita(){
       return db.execute('select * from receita;');
     }
+    static deletereceita(id) {
+      return db.execute('DELETE FROM receita WHERE id = ?', [id]);
+    }
   
 }
