@@ -29,5 +29,14 @@ module.exports = class receita{
     static deletereceita(id) {
       return db.execute('DELETE FROM receita WHERE id = ?', [id]);
     }
+
+    static criarreceita(nomereceita,settempo1,settemperatura1,settempo2,settemperatura2,
+      settempo3,settemperatura3,settempo4,settemperatura4,settempo5,settemperatura5,
+     settempo6,settemperatura6,settempo7,settemperatura7,settempo8,settemperatura8) {
+      return db.execute('INSERT INTO receita (nomereceita,settempo1) VALUES (?,?)', [nomereceita,settempo1]);
+    }
+   // static criarreceita(receita){
+     // return db.execute('INSERT INTO receita (nomereceita,settempo1) values (?,?)',[receita.nomereceita, receita.settempo1]);
+    //}
   
 }
