@@ -1,8 +1,21 @@
 const receita = require('../models/crudsql');
+const receitaid = require('../models/crudsqlreceita');
 
 exports.SelectReceita = async (req, res, next) => {
     try {
       const [Newreceita] = await receita.SelectReceita();
+      res.status(200).json(Newreceita);
+    } catch (err) {
+      if (!err.statusCode) {
+        err.statusCode = 500;
+      }
+      next(err);
+    }
+  };
+
+  exports.SelectReceitaId = async (req, res, next) => {
+    try {
+      const [Newreceita] = await receitaid.selectreceitaid();
       res.status(200).json(Newreceita);
     } catch (err) {
       if (!err.statusCode) {
@@ -25,16 +38,13 @@ exports.SelectReceita = async (req, res, next) => {
   };
 
   exports.criarreceita = async (req, res, next) => {
-
     const nomereceita = req.body.nomereceita;
-    const settempo1 = req.body.settempo1;
     try {
-      const criar = {
-        nomereceita: nomereceita,
-        settempo1: settempo1,
-      };
-      const result = await receita.criarreceita(criar);
-      res.status(201).json({ message: 'Posted!' });
+      const post = {
+        nomereceita: nomereceita
+      }
+      const result = await receita.criarreceita(post);
+      res.status(201).json({message: 'posted!'});
     } catch (err) {
       if (!err.statusCode) {
         err.statusCode = 500;

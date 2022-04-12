@@ -6,20 +6,24 @@ const Routes = require('./routes/routes');
 const rearme = require('./routes/rearme');
 const freq = require('./routes/freqmanual')
 const receita = require('./routes/receita');
+const receitaid = require('./routes/receitaid');
 const cors = require('cors');
 
 const errorController = require('./controllers/error');
 
 const app = express();
 
+const ports = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
 
-app.use(cors());
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  app.use(cors());
   next();
 });
 
@@ -31,7 +35,7 @@ app.use('/freq', freq);
 
 app.use('/receita', receita);
 
-const ports = process.env.PORT || 3000;
+app.use('/receitaid', receitaid);
 
 app.use(errorController.get404);
 

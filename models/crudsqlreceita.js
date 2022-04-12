@@ -23,19 +23,10 @@ module.exports = class receita{
     this.settempo8 = settempo8;
     this.settemperatura8 = settemperatura8;
     }
-    static SelectReceita(){
-      return db.execute('select * from receita;');
-    }
-    static deletereceita(id) {
-      return db.execute('DELETE FROM receita WHERE id = ?', [id]);
+
+    static selectreceitaid(id){
+      return db.execute('select * from receita where id = 24')
     }
 
-    static selectreceitaid(){
-      return db.execute('select * from receita where id=23')
-    }
-
-    static criarreceita(receita){
-     return db.execute('INSERT INTO receita (nomereceita) values (?)',[receita.nomereceita]);
-    }
   
 }
