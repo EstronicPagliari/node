@@ -25,8 +25,16 @@ module.exports = class receita{
     }
 
     static selectreceitaid(id){
-      return db.execute('select * from receita where id = 24')
+      return db.execute('select * from receita where id= ?', [id]);
     }
+
+    static carregarreceita(btcarregar){
+        return db.execute('update receitacarregar set btcarregar= ?', [btcarregar]);
+    }
+
+    static ligarMotor (ligar){
+        return db.execute('UPDATE tb_motor set ligar = ? ',[ligar]);
+      }
 
   
 }

@@ -4,8 +4,9 @@ const Controller = require('../controllers/receita');
 
 const router = express.Router();
 
-router.get('/', Controller.SelectReceitaId);
+router.put('/', Controller.carregarreceita);
 
+router.get('/:id', Controller.SelectReceitaId);
 
 
 module.exports = router;
