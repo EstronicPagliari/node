@@ -28,13 +28,12 @@ module.exports = class receita{
       return db.execute('select * from receita where id= ?', [id]);
     }
 
-    static carregarreceita(btcarregar){
-        return db.execute('update receitacarregar set btcarregar= ?', [btcarregar]);
+    static carregarreceita(idreceita){
+    return db.execute('update receitacarregar set idreceita= ?', [idreceita]);
     }
 
-    static ligarMotor (ligar){
-        return db.execute('UPDATE tb_motor set ligar = ? ',[ligar]);
-      }
+    static selectreceitacarregada(){
+      return db.execute('select * from receitacarregada;')
+    }
 
-  
 }

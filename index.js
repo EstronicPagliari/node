@@ -7,6 +7,7 @@ const rearme = require('./routes/rearme');
 const freq = require('./routes/freqmanual')
 const receita = require('./routes/receita');
 const receitaid = require('./routes/receitaid');
+const forno = require('./routes/forno');
 const cors = require('cors');
 
 const errorController = require('./controllers/error');
@@ -36,6 +37,8 @@ app.use('/freq', freq);
 app.use('/receita', receita);
 
 app.use('/receitaid', receitaid);
+
+app.use('/forno',forno);
 
 app.use(errorController.get404);
 
